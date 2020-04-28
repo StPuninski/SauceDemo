@@ -27,4 +27,7 @@ public class BasePage {
             Assert.fail("Колличество элементов не соответствует ожидаемому числу" + numberOfElements);
         }
     }
+
+
 }
+
