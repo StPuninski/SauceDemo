@@ -1,6 +1,4 @@
 package tests;
-
-
 import org.testng.annotations.Test;
 
 public class SauceDemoTest extends BaseTest{
@@ -8,8 +6,10 @@ public class SauceDemoTest extends BaseTest{
 
     @Test
     public void loginTest() {
+
         loginPage.openPage();
-        loginPage.login("standard_user","secret_sauce");
+
+        loginPage.login( System.getProperty("user"), System.getProperty("password"));
         productsPage.openPage();
         productsPage.addToCart("Sauce Labs Fleece Jacket");
         cartPage.openPage();
@@ -19,4 +19,21 @@ public class SauceDemoTest extends BaseTest{
         checkoutPage.checkout( "Stanislau", "Puninski", "12345");
 
     }
+
+    @Test
+    public void loginTest2(){
+      String uniqueId =  loginPageFactory
+        .openPage()
+        .login(user)
+        .addToCart("Sauce Labs Fleece Jacket")
+        .addToCart("Sauce Labs Bolt T-Shirt")
+        .clickCart()
+        .validateNumberOfProducts(2);
+
+
+        ;
+    }
+
 }
+
+

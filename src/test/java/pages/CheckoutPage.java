@@ -15,10 +15,16 @@ public class CheckoutPage extends BasePage {
     public CheckoutPage(WebDriver driver) {
         super(driver);
     }
-    public void openPage() {
+    public BasePage openPage() {
         driver.get(CHECKOUT_URL);
-
+return this;
     }
+
+    @Override
+    protected BasePage isPageOpened() {
+        return null;
+    }
+
     public void checkout(String FirstName, String LastName, String PostalCode){
         driver.findElement(FIRST_NAME_INPUT).sendKeys(FirstName);
         driver.findElement(LAST_NAME_INPUT).sendKeys(LastName);
