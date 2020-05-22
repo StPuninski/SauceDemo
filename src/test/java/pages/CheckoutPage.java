@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class CheckoutPage extends BasePage {
+public abstract class CheckoutPage extends BasePage {
     private static final By FIRST_NAME_INPUT = By.id("first-name");
     private static final By LAST_NAME_INPUT = By.id("last-name");
     private static final By ZIP_CODE_INPUT = By.id("postal-code");

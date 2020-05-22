@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -25,6 +26,11 @@ public class CartPage extends BasePage {
     protected CartPage isPageOpened() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(CHECKOUT_BUTTON));
         return this;
+    }
+
+    @Override
+    public void login(ChromeOptions chromeOptions) {
+
     }
 
     public String validateNumberOfProducts(int number){

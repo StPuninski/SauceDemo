@@ -3,6 +3,7 @@ package tests;
 import models.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
@@ -21,14 +22,34 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/webdrivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        loginPage = new LoginPage(driver);
-        productsPage = new ProductsPage(driver);
+        loginPage = new LoginPage(driver) {
+            @Override
+            public void login(ChromeOptions chromeOptions) {
+
+            }
+        };
+        productsPage = new ProductsPage(driver) {
+            @Override
+            public void login(ChromeOptions chromeOptions) {
+
+            }
+        };
         cartPage = new CartPage(driver);
-        checkoutPage = new CheckoutPage(driver);
-        loginPageFactory = new LoginPageFactory(driver);
+        checkoutPage = new CheckoutPage(driver) {
+            @Override
+            public void login(ChromeOptions chromeOptions) {
+
+            }
+        };
+        loginPageFactory = new LoginPageFactory(driver) {
+            @Override
+            public void login(ChromeOptions chromeOptions) {
+
+            }
+        };
 
     }
 

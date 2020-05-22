@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ProductsPage extends BasePage {
+public abstract class ProductsPage extends BasePage {
     private String  ADD_TO_CART_LOCATOR ="//*[text()='%s']/../../..//button";
     private static final String ADD_TO_CART_CSS = ".btn_inventory";
     private static final String CART_CSS = ".shopping_cart_link";
