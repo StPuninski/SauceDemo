@@ -1,6 +1,5 @@
 package tests;
 import org.testng.annotations.Test;
-import utils.CapabilitiesGenerator;
 
 public class SauceDemoTest extends BaseTest{
 
@@ -10,7 +9,7 @@ public class SauceDemoTest extends BaseTest{
 
         loginPage.openPage();
 
-        loginPage.login(CapabilitiesGenerator.getChromeOptions());
+        loginPage.login("stpuninski@gmail.com", "Poltosik_228");
         productsPage.openPage();
         productsPage.addToCart("Sauce Labs Fleece Jacket");
         cartPage.openPage();
